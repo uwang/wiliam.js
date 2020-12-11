@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haobingwang/wiliam.js.git"
+    "url": "git+https://github.com/uwang/wiliam.js.git"
   },
   "bugs": {
-    "url": "https://github.com/haobingwang/wiliam.js/issues"
+    "url": "https://github.com/uwang/wiliam.js/issues"
   },
-  "homepage": "https://github.com/haobingwang/wiliam.js#readme",
+  "homepage": "https://github.com/uwang/wiliam.js#readme",
   "dependencies": {
     "axios": "^0.21.0"
   }
