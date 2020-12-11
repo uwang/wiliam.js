@@ -59,9 +59,19 @@ function toDataUrl(url) {
     });
 }
 
+/**
+ * 滚动到文档中的某个坐标
+ * @param {*} x 
+ * @param {*} y 
+ */
+function scrollWindow (x = 0, y = 0) {
+  window.scrollTo(x, y);
+}
+
 module.exports = {
   getParameterByName,
   downloadFileSync,
   downloadFileAsync,
-  toDataUrl
+  toDataUrl,
+  scrollWindow
 };
