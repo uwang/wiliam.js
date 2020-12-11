@@ -13,5 +13,8 @@
   "bugs": {
     "url": "https://github.com/haobingwang/wiliam.js/issues"
   },
-  "homepage": "https://github.com/haobingwang/wiliam.js#readme"
+  "homepage": "https://github.com/haobingwang/wiliam.js#readme",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
 }
