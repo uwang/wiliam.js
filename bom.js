@@ -1,5 +1,10 @@
 const axios = require('axios');
 
+/**
+ * 从 Url 中提取出变量
+ * @param {String} name 键名
+ * @param {String} url 
+ */
 function getParameterByName(name, url = window.location.href) {
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
@@ -9,6 +14,11 @@ function getParameterByName(name, url = window.location.href) {
   return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+/**
+ * 模拟人工点击下载按钮
+ * @param {String} url 文件URl
+ * @param {String} filename 下载文件名
+ */
 function downloadFileSync (url, filename = '') {
     const link = document.createElement('a')
     link.style = 'position: fixed; left -10000px;'
