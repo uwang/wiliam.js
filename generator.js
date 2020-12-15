@@ -16,7 +16,7 @@ function range (start, stop, step) {
  */
 function getFutureYears (count) {
     const currentYear = (new Date()).getFullYear()
-    return range(currentYear, count, 1)
+    return range(currentYear, currentYear + count, 1)
 }
 
 module.exports = {
