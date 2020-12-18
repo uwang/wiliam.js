@@ -1,4 +1,5 @@
 require('./polyfill/array.js')
+const faker = require('faker/locale/zh_CN')
 
 /**
  * 
@@ -19,7 +20,19 @@ function getFutureYears (count) {
     return range(currentYear, currentYear + count, 1)
 }
 
+function generateMembers (count) {
+    const members = []
+    for (var i = count; i >= 0; i--) {
+        members.push({
+            name: faker.name.lastName() + faker.name.firstName(),
+            email: faker.internet.email()
+        })
+    }
+    return members
+}
+
 module.exports = {
     range,
-    getFutureYears
+    getFutureYears,
+    generateMembers
 }
