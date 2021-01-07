@@ -15,6 +15,12 @@ function getParameterByName(name, url = window.location.href) {
 }
 
 /**
+ * 获取当前 URL 参数的对象
+ * @param {*} url 
+ */
+const getURLParameters = url => (url.match(/([^?=&]+)(=([^&]*))/g) || []).reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+
+/**
  * 模拟人工点击下载按钮
  * @param {String} url 文件URl
  * @param {String} filename 下载文件名
@@ -78,10 +84,42 @@ function scrollWindow (x = 0, y = 0) {
   window.scrollTo(x, y);
 }
 
+/**
+ * 将一个字符串复制到剪贴板
+ * @param {*} str 
+ */
+const copyToClipboard = str => {     
+  const el = document.createElement(textarea);     
+  el.value = str;     
+  el.setAttribute('readonly', '');     
+  el.style.position =  absolute;     
+  el.style.left =  '-9999px';     
+  document.body.appendChild(el);     
+  const selected = document.getSelection().rangeCount > 0 ? document.getSelection().getRangeAt(0) : false;     
+  el.select();     
+  document.execCommand( copy );     
+  document.body.removeChild(el);     
+  if (selected) {         
+      document.getSelection().removeAllRanges();         
+      document.getSelection().addRange(selected);     
+  } 
+};
+
+/**
+ * 确定页面的浏览器选项卡是否处于前台活跃状态
+ */
+const isBrowserTabFocused = () => !document.hidden;
+
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+
 module.exports = {
+  getURLParameters,
   getParameterByName,
   downloadFileSync,
   downloadFileAsync,
   toDataUrl,
-  scrollWindow
+  scrollWindow,
+  copyToClipboard,
+  isBrowserTabFocused,
+  detectDeviceType
 };
