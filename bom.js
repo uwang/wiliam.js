@@ -110,7 +110,36 @@ const copyToClipboard = str => {
  */
 const isBrowserTabFocused = () => !document.hidden;
 
-const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop";
+const detectDeviceType = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ? "Mobile" : "Desktop"
+
+function getViewPortWidth() {
+  return document.documentElement.clientWidth || document.body.clientWidth
+}
+
+function getViewPortHeight() {
+  return document.documentElement.clientHeight || document.body.clientHeight
+}
+
+function getScrollLeft() {
+  return document.documentElement.scrollLeft || document.body.scrollLeft
+}
+
+function getScrollTop() {
+  return document.documentElement.scrollTop || document.body.scrollTop
+}
+
+function scrollToBottom (element) {
+  element.scrollTop = element.scrollHeight - element.clientHeight
+}
+
+/**
+ * 判定元素是否滚动到底
+ * @param {dom} element
+ * @returns boolean
+ */
+function isAtEndOfScroll (element) {
+  return element.scrollHeight - element.scrollTop === element.clientHeight
+}
 
 module.exports = {
   getURLParameters,
@@ -121,5 +150,11 @@ module.exports = {
   scrollWindow,
   copyToClipboard,
   isBrowserTabFocused,
-  detectDeviceType
+  detectDeviceType,
+  getViewPortWidth,
+  getViewPortHeight,
+  getScrollLeft,
+  getScrollTop,
+  scrollToBottom,
+  isAtEndOfScroll
 };
