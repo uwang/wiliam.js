@@ -128,7 +128,7 @@ function getScrollTop() {
   return document.documentElement.scrollTop || document.body.scrollTop
 }
 
-function scrollToBottom (element) {
+function scrollToBottom (element = document) {
   element.scrollTop = element.scrollHeight - element.clientHeight
 }
 

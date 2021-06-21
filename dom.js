@@ -16,9 +16,5 @@ const hasClass = (el, className) => el.classList.contains(className);
 
 module.exports = {
     hide,
-    hasClass,
-    detectDeviceType,
-    getURLParameters,
-    delay,
-    isBrowserTabFocused
+    hasClass
 };
