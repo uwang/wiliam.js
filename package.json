@@ -5,7 +5,8 @@
   "main": "wiliam.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "./bin/release.sh || true"
+    "release": "./bin/release.sh || true",
+    "sync": "./bin/sync.sh || true"
   },
   "repository": {
     "type": "git",
