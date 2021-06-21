@@ -24,6 +24,12 @@ node test/index.js
 npm run release
 ```
 
+## Sync
+
+```shell
+npm run sync
+```
+
 ## 常用包
 
 - [decimal.js](https://www.npmjs.com/package/decimal.js) 浮点数高精度计算
